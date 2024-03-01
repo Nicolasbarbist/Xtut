@@ -42,6 +42,7 @@
             text-decoration: underline;
         }
         section {
+            display: none;
             padding: 20px;
         }
         footer {
@@ -61,10 +62,10 @@
         <h1>Judaism</h1>
     </header>
     <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#beliefs">Beliefs</a>
-        <a href="#practices">Practices</a>
-        <a href="#holidays">Holidays</a>
+        <button onclick="openTab('introduction')">Introduction</button>
+        <button onclick="openTab('beliefs')">Beliefs</button>
+        <button onclick="openTab('practices')">Practices</button>
+        <button onclick="openTab('holidays')">Holidays</button>
     </nav>
     <section id="introduction">
         <h2>Introduction</h2>
@@ -85,5 +86,18 @@
     <footer>
         <p>Copyright &copy; 2024 xX404Xx</p>
     </footer>
+
+    <script>
+        function openTab(tabName) {
+            // Hide all sections
+            var sections = document.getElementsByTagName("section");
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = "none";
+            }
+
+            // Show the selected section
+            document.getElementById(tabName).style.display = "block";
+        }
+    </script>
 </body>
 </html>
